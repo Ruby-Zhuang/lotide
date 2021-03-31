@@ -16,29 +16,15 @@ const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
-    for (const keyName in itemsToCount) {
-      if (shouldCount(itemsToCount, keyName, item)) {
-        results[keyName] = increaseCount(results, keyName);
+    if (itemsToCount[item]) {     // If item in allItems array is a key in the itemsToCount and is set to true
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        results[item] = 1;
       }
     }
   }
   return results;
-};
-
-const shouldCount = function(object, actualKey, keyToCheck) {
-  if (actualKey === keyToCheck && object[actualKey] === true) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const increaseCount = function(object, key) {
-  if (object[key]) {
-    return object[key] += 1;
-  } else {
-    return 1;
-  }
 };
 
 // TEST CODE
