@@ -38,3 +38,4 @@ const data1 = {
 assertEqual(findKey(data1, x => x.stars === 2), "noma");
 assertEqual(findKey(data1, x => x.stars === 3), "Akaleri");
 assertEqual(findKey(data1, x => x.stars > 2), "Akaleri");
+assertEqual(findKey(data1, x => x.stars === 4), undefined);
