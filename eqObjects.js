@@ -41,6 +41,8 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(currentValue1, currentValue2)) {
         return false;
       }
+    } else if ((typeof currentValue1 === "object") && (typeof currentValue2 === "object")) {
+      return eqObjects(currentValue1, currentValue2);
     } else if (currentValue1 !== currentValue2) {
       return false;
     }
@@ -49,19 +51,32 @@ const eqObjects = function(object1, object2) {
 };
 
 // TEST CODE
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true);
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertEqual(eqObjects(ab, ba), true);
 
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false);
+// const abc = { a: "1", b: "2", c: "3" };
+// assertEqual(eqObjects(ab, abc), false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true);
+// const abd = { a: "1", b: "2", d: "3" };
+// assertEqual(eqObjects(abc, abd), false);
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false);
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true);
 
-const dc2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd2, dc2), true);
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false);
+
+// const dc2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd2, dc2), true);
+
+// TEST CODE FOR RECURSIVE IMPLEMENTATION
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+assertEqual(eqObjects({ a: { z: 1 }, b: ["2", 3, 4] }, { a: { z: 1 }, b: ["2", 3, 4]}), true);
+assertEqual(eqObjects({ a: { z: {y: 1} }, b: 2 }, { a: { z: {y: 1} }, b: 2 }), true);
+assertEqual(eqObjects({ a: { z: {y: 1} }, b: 2 }, { a: { z: {y: 2} }, b: 2 }), false);
+assertEqual(eqObjects({ a: { z: {y: [1]}}, b: ["2", 3, 4] }, { a: { z: {y: [1]}}, b: ["2", 3, 4] }), true);
+assertEqual(eqObjects({ a: { z: {y: {z: 1}}}, b: ["2", 3, 4] }, { a: { z: {y: {z: 1}}}, b: ["2", 3, 4] }), true);
