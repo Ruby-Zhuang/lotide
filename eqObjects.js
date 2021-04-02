@@ -37,12 +37,17 @@ const eqObjects = function(object1, object2) {
     const currentValue1 = object1[key];
     const currentValue2 = object2[key];
 
+    // Check if objects are arrays
     if (Array.isArray(currentValue1) && Array.isArray(currentValue2)) {
       if (!eqArrays(currentValue1, currentValue2)) {
         return false;
       }
+    // Recursive case if values are objects (but not arrays)
     } else if ((typeof currentValue1 === "object") && (typeof currentValue2 === "object")) {
-      return eqObjects(currentValue1, currentValue2);
+      if (!eqObjects(currentValue1, currentValue2)) {
+        return false;
+      }
+    // Base case
     } else if (currentValue1 !== currentValue2) {
       return false;
     }
