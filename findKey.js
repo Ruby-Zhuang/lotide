@@ -1,13 +1,5 @@
 // TEST/ASSERTION FUNCTIONS
-const assertEqual = function(actual, expected) {
-
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-
-};
+const assertEqual = require("./assertEqual");
 
 // ACTUAL FUNCTION
 // It should scan the object and return the first key for which the callback returns a truthy value.
