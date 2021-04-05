@@ -1,4 +1,5 @@
 const countLetters = require('./countLetters');
+const countOnly    = require('countOnly');
 const flatten      = require('./flatten');
 const head         = require('./head');
 const map          = require('./map');
@@ -9,6 +10,7 @@ const without      = require('./without');
 
 module.exports = {
   countLetters,
+  countOnly,
   flatten,
   head,
   map,
