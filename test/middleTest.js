@@ -1,4 +1,4 @@
-// rRE FUNCTIONS
+// REQUIRE FUNCTIONS
 const assertArraysEqual = require("../assertArraysEqual");
 const middle = require("../middle");
 
