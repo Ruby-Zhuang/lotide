@@ -1,9 +1,13 @@
-const head   = require('./head');
-const tail   = require('./tail');
-const middle = require('./middle');
+const countLetters = require('./countLetters');
+const head         = require('./head');
+const tail         = require('./tail');
+const map          = require('./map');
+const middle       = require('./middle');
 
 module.exports = {
-  head:   head,
-  tail:   tail,
-  middle: middle
+  countLetters: countLetters,
+  head:         head,
+  tail:         tail,
+  map:          map,
+  middle:       middle
 };
