@@ -1,8 +1,9 @@
-// TEST/ASSERTION FUNCTIONS
-const assertEqual = require("./assertEqual");
-
 // ACTUAL FUNCTION
-const findKeyByValue = function(object, value) {
+const findKeyValue = function(object, value) {
+  if (!object) {
+    return;
+  }
+
   let key;
   const existingKeys = Object.keys(object);
 
@@ -14,17 +15,4 @@ const findKeyByValue = function(object, value) {
   return key;
 };
 
-// TEST CODE
-const bestTVShowsByGenre = {
-  // eslint-disable-next-line camelcase
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire",
-  romance: ""
-};
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
-assertEqual(findKeyByValue(bestTVShowsByGenre, ""), "romance");
-assertEqual(findKeyByValue(bestTVShowsByGenre, undefined), undefined);
+module.exports = findKeyValue;
