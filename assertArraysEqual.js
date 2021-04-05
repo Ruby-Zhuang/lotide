@@ -1,5 +1,7 @@
+// REQUIRE MODULES
 const eqArrays = require("./eqArrays");
 
+// ASSERTARRAYSEQUAL FUNCTION
 const assertArraysEqual = function(actual, expected) {
   const match = eqArrays(actual, expected);
   if (match) {
@@ -9,11 +11,5 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-// assertArraysEqual([1, 2, 3], [1, 2, 3]);
-// assertArraysEqual([1, 2, 3], [1, 2]);
-// assertArraysEqual([1, 2, 3], [3, 2, 1]);
-// assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-// assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
-
+// MODULE EXPORTS
 module.exports = assertArraysEqual;
