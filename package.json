@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@ruby.zhuang/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A mini clone of the lodash JavaScript library.",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/Ruby-Zhuang/lotide.git"
   },
-  "author": "",
+  "author": {
+    "name": "Ruby Zhuang",
+    "email": "ruby.zhuang@hotmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ruby-Zhuang/lotide/issues"
