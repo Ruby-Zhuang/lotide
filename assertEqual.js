@@ -1,3 +1,4 @@
+// ASSERTEQUAL FUNCTION
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
@@ -8,10 +9,5 @@ const assertEqual = function(actual, expected) {
 
 };
 
-// TEST CODE
-// assertEqual(1, 3);
-// assertEqual(1, 1);
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual("Bootcamp", "Bootcamp");
-
+// MODULE EXPORTS
 module.exports = assertEqual;
