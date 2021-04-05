@@ -6,12 +6,4 @@ const middle       = require('./middle');
 const takeUntil    = require('./takeUntil');
 const without      = require('./without');
 
-module.exports = {
-  countLetters: countLetters,
-  head:         head,
-  tail:         tail,
-  map:          map,
-  middle:       middle,
-  takeUntil:    takeUntil,
-  without:      without
-};
+module.exports = {countLetters, head, tail, map, middle, takeUntil, without};

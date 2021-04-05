@@ -1,5 +1,3 @@
-//const eqArrays = require("./eqArrays");
-//const assertArraysEqual = require("./assertArraysEqual");
 // WITHOUT FUNCTION
 const without = function(source, itemsToRemove) {
   const filtered = [];
