@@ -1,6 +1,3 @@
-// REQUIRE MODULES
-const assertEqual = require("./assertEqual");
-
 // HEAD FUNCTION
 const head = function(array) {
   if (array.length > 0) {
