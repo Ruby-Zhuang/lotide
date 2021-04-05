@@ -4,10 +4,16 @@ const head = require('../head');
 
 // TEST CODE
 describe("#head", () => {
+  // Edge Cases
+  it("returns undefined for empty input", () => {
+    assert.isUndefined(head());
+  });
+
   it("returns undefined for []", () => {
     assert.isUndefined(head([]));
   });
 
+  // Happy Path
   it("returns '5' for ['5']", () => {
     assert.strictEqual(head(['5']), '5');
   });

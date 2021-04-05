@@ -1,29 +1,28 @@
 // REQUIRE MODULES
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
 // TEST CODE
-// Test Case 1: Check the returned array elements
-const test1 = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(test1.length, 2); // ensure we get back two elements
-assertEqual(test1[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(test1[1], "Labs"); // ensure second element is "Labs"
+describe("#tail", () => {
+  // Edge Cases
+  it("returns undefined for empty input", () => {
+    assert.isUndefined(tail());
+  });
 
-// Test Case 2
-console.log("------");
-const test2 = tail([]);
-console.log(test2);
-assertEqual(test2.length, 0);
+  it("returns [] for []", () => {
+    assert.deepEqual(tail([]), []);
+  });
 
-// Test Case 3
-console.log("------");
-const test3 = tail([1]);
-console.log(test3);
-assertEqual(test3.length, 0);
+  it("returns [] for [1]", () => {
+    assert.deepEqual(tail([1]), []);
+  });
 
-// Test Case 4
-console.log("------");
-const test4 = tail([1, 2]);
-console.log(test4);
-assertEqual(test4.length, 1);
-assertEqual(test4[0], 2);
+  // Happy Path
+  it("returns [2] for [1, 2]", () => {
+    assert.deepEqual(tail([1, 2]),[2]);
+  });
+
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]),["Lighthouse", "Labs"]);
+  });
+});

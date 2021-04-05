@@ -1,5 +1,9 @@
 // MIDDLE FUNCTION
 const middle = function(array) {
+  if (!Array.isArray(array)) {
+    return;
+  }
+
   let middleElements = [];
   const arrayLength = array.length;
   const middleIndex = Math.floor(arrayLength / 2);
