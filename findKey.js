@@ -1,6 +1,3 @@
-// TEST/ASSERTION FUNCTIONS
-//const assertEqual = require("./assertEqual");
-
 // ACTUAL FUNCTION
 const findKey = function(array, callback) {
   let result;
