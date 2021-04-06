@@ -53,12 +53,3 @@ describe("#eqObjects", () => {
     assert.isTrue(eqObjects(object1, object2));
   });
 });
-
-// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
-// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
-// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
-// assertEqual(eqObjects({ a: { z: 1 }, b: ["2", 3, 4] }, { a: { z: 1 }, b: ["2", 3, 4]}), true);
-// assertEqual(eqObjects({ a: { z: {y: 1} }, b: 2 }, { a: { z: {y: 1} }, b: 2 }), true);
-// assertEqual(eqObjects({ a: { z: {y: 1} }, b: 2 }, { a: { z: {y: 2} }, b: 2 }), false);
-// assertEqual(eqObjects({ a: { z: {y: [1]}}, b: ["2", 3, 4] }, { a: { z: {y: [1]}}, b: ["2", 3, 4] }), true);
-// assertEqual(eqObjects({ a: { z: {y: {z: 1}}}, b: ["2", 3, 4] }, { a: { z: {y: {z: 1}}}, b: ["2", 3, 4] }), true);
