@@ -1,5 +1,4 @@
-// TEST/ASSERTION FUNCTIONS
-const assertEqual = require("./assertEqual");
+// REQUIRE FUNCTIONS
 const eqArrays = require("./eqArrays");
 
 // ACTUAL FUNCTION
